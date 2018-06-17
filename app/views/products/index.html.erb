@@ -1,0 +1,25 @@
+<h1>Curret cart:</h1>
+
+<ul>
+<% cart.each do |product| %>
+    <li><%= product %></li>
+<% end %>
+</ul>
+
+<hr>
+
+<h1>Add a product to your cart:</h1>
+
+<%# form_tag '/', method: 'post' do %>
+    <%# text_field_tag 'product' %>
+    <%# submit_tag "add to cart" %>
+<%#end %>
+
+<%= form_for :product do |f| %>
+
+    <%= f.label :product %>
+    <%= f.text_field :product, :name => "product" %>
+
+    <%= f.submit "add to cart" %>
+
+<% end %>
